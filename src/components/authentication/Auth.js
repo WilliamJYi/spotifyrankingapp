@@ -6,7 +6,7 @@ export default function Auth(code) {
 
   useEffect(() => {
     axios
-      .post("http://localhost:8000/login", { code })
+      .post("https://spotifyappbackend.herokuapp.com/login", { code })
       .then((response) => {
 
         // If success then cut the code string from the URL and execute the other thing
@@ -21,6 +21,24 @@ export default function Auth(code) {
         window.location = "/";
       });
   }, [code]);
+
+  /*useEffect(() => {
+    axios
+      .post("http://localhost:8000/login", { code })
+      .then((response) => {
+
+        // If success then cut the code string from the URL and execute the other thing
+        window.history.pushState({}, null, "/profile");
+
+        console.log(response.data);
+        setAccessToken(response.data.accessToken);
+
+      })
+      .catch(() => {
+        //   If fail redirect to home page - Login page
+        window.location = "/";
+      });
+  }, [code]);*/
 
   return accessToken
 }

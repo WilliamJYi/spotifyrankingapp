@@ -1,5 +1,6 @@
 const authEndpoint = "https://accounts.spotify.com/authorize";
-const redirectUri = "http://localhost:3000/";
+//const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://upbeat-mccarthy-2f56f2.netlify.app/"
 const clientId = "c48fdc544c2249149f80f4d79ab3ffe4";
 
 const scopes = [

@@ -15,10 +15,13 @@ function Main(props){
     const bearer = "Bearer " + props.token;
 
     useEffect(() =>{
+        if(props.token !== undefined){
+            console.log(bearer);
+            apiCall1();
+            apiCall2();
+            apiCall3(); 
+        }
         console.log(bearer);
-        apiCall1();
-        apiCall2();
-        apiCall3();
     }, [type]);
 
     const apiCall1 = async () => {

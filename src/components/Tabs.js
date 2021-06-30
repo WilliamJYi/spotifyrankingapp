@@ -53,6 +53,9 @@ export default function FullWidthTabs(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const list1 = props.list1;
+  const list2 = props.list2;
+  const list3 = props.list3;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -84,7 +87,7 @@ export default function FullWidthTabs(props) {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction} className="tracks">
-            {props.list1.map((item,id) => 
+            {props.list1 !== "" && list1.map((item,id) => 
                                 <div key={uuidv4()} className="track">
                                     <p className="rank">{id + 1}</p>
                                     <img src={item.album.images[0].url} alt="cover" width="100"/>
@@ -94,7 +97,7 @@ export default function FullWidthTabs(props) {
             )}
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction} className="tracks">
-            {props.list2.map((item,id) => 
+            {props.list1 !== "" && list2.map((item,id) => 
                                 <div key={uuidv4()} className="track">
                                     <p className="rank">{id + 1}</p>
                                     <img src={item.album.images[0].url} alt="cover" width="100"/>
@@ -104,7 +107,7 @@ export default function FullWidthTabs(props) {
             )}
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction} className="tracks">
-            {props.list3.map((item,id)=> 
+            {props.list1 !== "" && list3.map((item,id)=> 
                                 <div key={uuidv4()} className="track">
                                     <p className="rank">{id + 1}</p>
                                     <img src={item.album.images[0].url} alt="cover" width="100"/>

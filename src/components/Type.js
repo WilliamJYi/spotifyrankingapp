@@ -36,7 +36,7 @@ export default function IconBreadcrumbs(props) {
 
   return (
     <Breadcrumbs aria-label="breadcrumb" className={classes.box}>
-      <Link color="inherit" href="/" onClick={handleClick} className={classes.link}>
+      <Link color="inherit" href="/" onClick={props.display3} className={classes.link}>
         <HomeIcon className={classes.icon} />
         Home
       </Link>
@@ -52,7 +52,7 @@ export default function IconBreadcrumbs(props) {
       <Link
         color="inherit"
         href="/getting-started/installation/"
-        onClick={handleClick}
+        onClick={props.display2}
         className={classes.link}
       >
         <GrainIcon className={classes.icon} />
